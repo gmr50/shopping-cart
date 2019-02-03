@@ -48,6 +48,9 @@ print("xxxxxxxxs")
 
 
 loop_bool = True
+item_count = 0 
+prices_list = []
+names_list = []
 
 # an infinite loop! you can press control+c to cancel the program if/when it gets stuck...
 while loop_bool == True:
@@ -56,7 +59,7 @@ while loop_bool == True:
     # demonstrating ability to recognize what the input was, although you might also want to check its datatype
 
 
-    if user_input != "DONE":
+    if user_input != ("DONE") and user_input != ("done"):
         print("YOUR INPUT WAS: " + str(user_input))
 
 
@@ -73,13 +76,42 @@ while loop_bool == True:
 
         product_price = 0
         product_price = selected_product["price"]
-        print(product_price)
+        product_name = selected_product["name"]
+        prices_list.append(product_price)
+        names_list.append(product_name) 
+
+
+
+        #increments item count 
+        item_count += 1
 
         print("***********")
-
-    else: 
-        print("Thanks for shopping!")
+    
+    else:
         loop_bool = False
+        if item_count == 0:
+
+            print("You didn't buy anything! Thanks for coming though.")
+        else: 
+
+
+            print("You bought " + str(item_count) + " items")
+
+            total_price = 0.00
+            item_iterator = 0
+            for x, y in zip(prices_list, names_list):
+                item_iterator += 1
+
+                price_format = "${0:.2f}".format(x)
+                print("Item: " + str(y) + " Price: " + str(price_format))
+                total_price = total_price + x 
+
+
+
+            final_price_format = "${0:.2f}".format(total_price)
+            print("The toal price is " + str(final_price_format))
+            print("Thanks for shopping!")
+        
 
 
 
