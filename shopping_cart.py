@@ -2,6 +2,10 @@
 
 # shopping_cart.py
 
+import datetime 
+#look in course notes for how to use
+#modules/datetime
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -27,11 +31,59 @@ products = [
 
 # TODO: write some Python code here to produce the desired functionality...
 
-print(products)
+
+#print(products)
+
+
+print("************")
+print("***************************************************")
+print("Hello!!! Welcome to Graham's groceries 'n goodies")
+print("***************************************************")
+print("************")
+
+print("xxxxxxxxs")
+
+
+
+
+
+loop_bool = True
 
 # an infinite loop! you can press control+c to cancel the program if/when it gets stuck...
-while True:
+while loop_bool == True:
     # capturing user input and storing in a variable
     user_input = input("Please input a product identifier, or 'DONE' if there are no more items: ")
     # demonstrating ability to recognize what the input was, although you might also want to check its datatype
-    print("YOUR INPUT WAS: " + user_input)
+
+
+    if user_input != "DONE":
+        print("YOUR INPUT WAS: " + str(user_input))
+
+
+        #in order to reference a product by its id, need to do filtering 
+        #or do a list comprehension *************
+
+        #using list comprehension to look up item
+        matching_product = [pr for pr in products if pr["id"] == int(user_input)]
+        #this list comprehension returns a list, could be all the products or just one item
+
+        #takes and selects the first line of the list given by the list comprehension
+        #if theres a match, in this scenario, it will be the first
+        selected_product = matching_product[0]
+
+        product_price = 0
+        product_price = selected_product["price"]
+        print(product_price)
+
+        print("***********")
+
+    else: 
+        print("Thanks for shopping!")
+        loop_bool = False
+
+
+
+
+   # price = product["price"]
+   # assuming there was a single dictionary item named product 
+
