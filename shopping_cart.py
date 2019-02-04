@@ -163,6 +163,7 @@ while loop_bool == True:
 			print("Thanks for shopping!")
 			print("Come back and get some goodies from Graham soon")
 			print("------------------------------------------------------------------")
+			###################################
 
 			#printing receipt section
 			receipt_input = input("Would you like a receipt? Press 'Y' or 'y' for yes, otherwise press any key: ")

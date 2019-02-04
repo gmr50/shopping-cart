@@ -1,0 +1,19 @@
+------------------------------------------------------------------
+                                                                                                                                       Graham's Groceries 'n Goodies                                                                                                                                        
+                                                                                                                                                847-846-9452                                                                                                                                                
+                                                                                                                      Find us on the web at https://github.com/gmr50/shopping-cart !!                                                                                                                       
+------------------------------------------------------------------
+Purchase Date: 02/03/19
+Purchase Time: 10:05
+------------------------------------------------------------------
+ + Chocolate Fudge Layer Cake , $18.50
+ + Robust Golden Unsweetened Oolong Tea , $2.49
+ + Chocolate Sandwich Cookies , $3.50
+------------------------------------------------------------------
+Subtotal: $24.49
+Tax: $1.47
+Total Price: $25.96
+------------------------------------------------------------------
+Thanks for shopping!
+Come back and get some goodies from Graham soon
+------------------------------------------------------------------
