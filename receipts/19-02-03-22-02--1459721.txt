@@ -1,0 +1,22 @@
+------------------------------------------------------------------
+                                                                                                                                       Graham's Groceries 'n Goodies                                                                                                                                        
+                                                                                                                                                847-846-9452                                                                                                                                                
+                                                                                                                      Find us on the web at https://github.com/gmr50/shopping-cart !!                                                                                                                       
+------------------------------------------------------------------
+Purchase Date: 02/03/19
+Purchase Time: 10:02
+------------------------------------------------------------------
+ + Chocolate Sandwich Cookies Price: $3.50
+ + All-Seasons Salt Price: $4.99
+ + Robust Golden Unsweetened Oolong Tea Price: $2.49
+ + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce Price: $6.99
+ + Green Chile Anytime Sauce Price: $7.99
+ + Dry Nose Oil Price: $21.99
+------------------------------------------------------------------
+Subtotal: $47.95
+Tax: $2.88
+Total Price: $50.83
+------------------------------------------------------------------
+Thanks for shopping!
+Come back and get some goodies from Graham soon
+------------------------------------------------------------------

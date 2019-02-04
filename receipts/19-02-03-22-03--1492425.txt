@@ -1,0 +1,19 @@
+------------------------------------------------------------------
+                                                                                                                                       Graham's Groceries 'n Goodies                                                                                                                                        
+                                                                                                                                                847-846-9452                                                                                                                                                
+                                                                                                                      Find us on the web at https://github.com/gmr50/shopping-cart !!                                                                                                                       
+------------------------------------------------------------------
+Purchase Date: 02/03/19
+Purchase Time: 10:03
+------------------------------------------------------------------
+ + Chocolate Sandwich Cookies , $3.50
+ + All-Seasons Salt , $4.99
+ + Robust Golden Unsweetened Oolong Tea , $2.49
+------------------------------------------------------------------
+Subtotal: $10.98
+Tax: $0.66
+Total Price: $11.64
+------------------------------------------------------------------
+Thanks for shopping!
+Come back and get some goodies from Graham soon
+------------------------------------------------------------------

@@ -3,6 +3,7 @@
 # shopping_cart.py
 
 import datetime 
+
 #look in course notes for how to use
 #modules/datetime
 
@@ -136,12 +137,12 @@ while loop_bool == True:
 			print("------------------------------------------------------------------")
 
 			total_price = 0.00
-			item_iterator = 0
+			
 			for x, y in zip(prices_list, names_list):
-				item_iterator += 1
+				
 
 				price_format = "${0:.2f}".format(x)
-				print(" + " + str(y) + " Price: " + str(price_format))
+				print(" + " + str(y) + " , " + str(price_format))
 				total_price = total_price + x 
 
 			#times dc tax rate
@@ -162,6 +163,60 @@ while loop_bool == True:
 			print("Thanks for shopping!")
 			print("Come back and get some goodies from Graham soon")
 			print("------------------------------------------------------------------")
+
+			#printing receipt section
+			receipt_input = input("Would you like a receipt? Press 'Y' or 'y' for yes, otherwise press any key: ")
+
+			if(receipt_input == "Y" or receipt_input == "y"):
+				print("You selected yes!")
+
+				today2  = datetime.date.today().strftime('%y-%m-%d-')
+				now2 = datetime.datetime.now().time().strftime('%H-%M-%s%f')
+
+				file_name = "receipts/" + str(today2) + str(now2) + ".txt"
+				print("The receipt file's name is: " + file_name)
+				print("Please come again!!")
+
+				with open(file_name, "w") as file:
+					file.write("------------------------------------------------------------------")
+					file.write("\n")
+					file.write("Graham's Groceries 'n Goodies".center(300))
+					file.write("\n")
+					file.write("847-846-9452".center(300))
+					file.write("\n")
+					file.write("Find us on the web at https://github.com/gmr50/shopping-cart !! ".center(300))
+					file.write("\n")
+					file.write("------------------------------------------------------------------")
+					file.write("\n")
+					file.write("Purchase Date: " + str(today))
+					file.write("\n")
+					file.write("Purchase Time: " + str(now))
+					file.write("\n")
+					file.write("------------------------------------------------------------------")
+					file.write("\n")
+					for x, y in zip(prices_list, names_list):
+						price_format = "${0:.2f}".format(x)
+						file.write(" + " + str(y) + " , " + str(price_format))
+						file.write("\n")
+
+					file.write("------------------------------------------------------------------")
+					file.write("\n")
+					file.write("Subtotal: " + str(total_price_format))
+					file.write("\n")
+					file.write("Tax: " + str(final_tax_format))
+					file.write("\n")
+					file.write("Total Price: " + str(final_price_format))
+					file.write("\n")
+					file.write("------------------------------------------------------------------")
+					file.write("\n")
+					file.write("Thanks for shopping!")
+					file.write("\n")
+					file.write("Come back and get some goodies from Graham soon")
+					file.write("\n")
+					file.write("------------------------------------------------------------------")
+
+			else:
+				print("No receipt. See you soon!")
 
 
 
