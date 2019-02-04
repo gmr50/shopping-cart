@@ -94,6 +94,14 @@ while loop_bool == True:
             print("You didn't buy anything! Thanks for coming though.")
         else: 
 
+            ########################
+            # receipt printing
+
+            #printing date and time w formatting
+            today  = datetime.date.today().strftime('%m/%d/%y')
+            now = datetime.datetime.now().time().strftime('%I:%M')
+            print("Purchase Date: " + str(today))
+            print("Purchase Time: " + str(now))
 
             print("You bought " + str(item_count) + " items")
 
@@ -106,10 +114,18 @@ while loop_bool == True:
                 print("Item: " + str(y) + " Price: " + str(price_format))
                 total_price = total_price + x 
 
+            #times dc tax rate
+            tax = total_price * .06
+            final_price = tax + total_price
+            total_price_format = "${0:.2f}".format(total_price)
+            final_tax_format = "${0:.2f}".format(tax)
+            final_price_format = "${0:.2f}".format(final_price)
+
+            print("Subtotal: " + str(total_price_format))
+            print("Tax: " + str(final_tax_format))
+            print("Total Price: " + str(final_price_format))
 
 
-            final_price_format = "${0:.2f}".format(total_price)
-            print("The toal price is " + str(final_price_format))
             print("Thanks for shopping!")
         
 
