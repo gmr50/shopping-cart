@@ -35,16 +35,27 @@ products = [
 #print(products)
 
 
-print("************")
-print("***************************************************")
-print("Hello!!! Welcome to Graham's groceries 'n goodies")
-print("***************************************************")
-print("************")
+print("************".center(300))
+print("***************************************************".center(300))
+print("Hello!!! Welcome to Graham's groceries 'n goodies".center(300))
+print("***************************************************".center(300))
+print("************".center(300))
 
-print("xxxxxxxxs")
+print("Here's our menu!")
+
+print("------------------------------------------------------------------")
+
+def name_sort(product_list):
+    return product_list["name"]
+
+sorted_products = sorted(products,key=name_sort)
 
 
+for pr in sorted_products:
+    price_product = "${0:.2f}".format(pr["price"])
+    print("+ " + pr["name"] + " (" + str(price_product) + ") " + "[ID: " + str(pr["id"]) +  "]")
 
+print("------------------------------------------------------------------")
 
 
 loop_bool = True
@@ -96,14 +107,19 @@ while loop_bool == True:
 
             ########################
             # receipt printing
-
+            print("generating receipt....")
+            print("------------------------------------------------------------------")
+            print("Graham's Groceries 'n Goodies".center(300))
+            print("847-846-9452".center(300))
+            print("Find us on the web at https://github.com/gmr50/shopping-cart !! ".center(300))
+            print("------------------------------------------------------------------")
             #printing date and time w formatting
             today  = datetime.date.today().strftime('%m/%d/%y')
             now = datetime.datetime.now().time().strftime('%I:%M')
             print("Purchase Date: " + str(today))
             print("Purchase Time: " + str(now))
 
-            print("You bought " + str(item_count) + " items")
+            print("------------------------------------------------------------------")
 
             total_price = 0.00
             item_iterator = 0
@@ -111,7 +127,7 @@ while loop_bool == True:
                 item_iterator += 1
 
                 price_format = "${0:.2f}".format(x)
-                print("Item: " + str(y) + " Price: " + str(price_format))
+                print(" + " + str(y) + " Price: " + str(price_format))
                 total_price = total_price + x 
 
             #times dc tax rate
@@ -121,13 +137,17 @@ while loop_bool == True:
             final_tax_format = "${0:.2f}".format(tax)
             final_price_format = "${0:.2f}".format(final_price)
 
+            print("------------------------------------------------------------------")
+
             print("Subtotal: " + str(total_price_format))
             print("Tax: " + str(final_tax_format))
             print("Total Price: " + str(final_price_format))
 
+            print("------------------------------------------------------------------")
 
             print("Thanks for shopping!")
-        
+            print("Come back and get some goodies from Graham soon")
+            print("------------------------------------------------------------------")
 
 
 
