@@ -5,7 +5,7 @@ import datetime
 import csv
 
 
-from shopping_cart_revisited import to_usd
+from shopping_cart_revisited import to_usd, human_friendly_timestamp, find_product, calculate_total_price
 
 
 def name_sort(product_list):
@@ -29,8 +29,8 @@ with open(csv_file_path, "r") as csv_file:
 
 
 
-
-
+now = human_friendly_timestamp("now")
+print("Now: " + now)
 print("************")
 print("***************************************************")
 print("Hello!!! Welcome to Graham's groceries 'n goodies")
@@ -72,41 +72,28 @@ while loop_bool == True:
 			print("YOUR INPUT WAS: " + str(user_input))
 
 
+			selected_product = find_product(user_input,products)
 		
 
-		#in order to reference a product by its id, need to do filtering 
-		#or do a list comprehension *************
-
-		#using list comprehension to look up item
-			matching_product = [pr for pr in products if pr["id"] == int(user_input)]
-		#this list comprehension returns a list, could be all the products or just one item
-
-		#takes and selects the first line of the list given by the list comprehension
-		#if theres a match, in this scenario, it will be the first
-
-			if not matching_product:
-				print("That's not on the menu! pick again!")
-			else:
-				selected_product = matching_product[0]
+			product_price = 0
+			product_price = selected_product["price"]
+			product_name = selected_product["name"]
+			prices_list.append(product_price)
+			names_list.append(product_name) 
 
 
 
-				product_price = 0
-				product_price = selected_product["price"]
-				product_name = selected_product["name"]
-				prices_list.append(product_price)
-				names_list.append(product_name) 
-
-
-
-				#increments item count 
-				item_count += 1
+			#increments item count 
+			item_count += 1
 
 			print("***********")
 
-		except ValueError:
+		except:
+			#catches error from find_product function
 			print("Invalid entry! Try again.")
-	
+
+
+
 	else:
 		loop_bool = False
 		if item_count == 0:
@@ -123,34 +110,30 @@ while loop_bool == True:
 			print("Find us on the web at https://github.com/gmr50/shopping-cart !! ".center(300))
 			print("------------------------------------------------------------------")
 			#printing date and time w formatting
-			today  = datetime.date.today().strftime('%m/%d/%y')
-			now = datetime.datetime.now().time().strftime('%I:%M')
-			print("Purchase Date: " + str(today))
-			print("Purchase Time: " + str(now))
+			today  = human_friendly_timestamp("today")
+			now = human_friendly_timestamp("now")
+			print("Purchase Date: " + today)
+			print("Purchase Time: " + now)
 
 			print("------------------------------------------------------------------")
 
-			total_price = 0.00
+
 			
 			for x, y in zip(prices_list, names_list):
 				
 
 				price_format = to_usd(x)
 				print(" + " + str(y) + " , " + str(price_format))
-				total_price = total_price + x 
 
-			#times dc tax rate
-			tax = total_price * .06
-			final_price = tax + total_price
-			tax = to_usd(tax)
-			final_price = to_usd(final_price)
-			subtotal = to_usd(total_price)
+
+
+			calculations_list = calculate_total_price(prices_list)
 
 			print("------------------------------------------------------------------")
 
-			print("Subtotal: " + subtotal)
-			print("Tax: " + tax)
-			print("Total Price: " + final_price)
+			print("Subtotal: " + str(calculations_list[0]))
+			print("Tax: " + str(calculations_list[1]))
+			print("Total Price: " + str(calculations_list[2]))
 
 			print("------------------------------------------------------------------")
 
@@ -165,8 +148,9 @@ while loop_bool == True:
 			if(receipt_input == "Y" or receipt_input == "y"):
 				print("You selected yes!")
 
-				today2  = datetime.date.today().strftime('%y-%m-%d-')
-				now2 = datetime.datetime.now().time().strftime('%H-%M-%s%f')
+				#this datetime invocation kept for receipt writing purposes
+				today2  = datetime.date.today().strftime('%d-%m-%y-')
+				now2 = human_friendly_timestamp("now")
 
 				file_name = "receipts/" + str(today2) + str(now2) + ".txt"
 				print("The receipt file's name is: " + file_name)

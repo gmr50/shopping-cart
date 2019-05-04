@@ -1,0 +1,18 @@
+------------------------------------------------------------------
+                                                                                                                                       Graham's Groceries 'n Goodies                                                                                                                                        
+                                                                                                                                                847-846-9452                                                                                                                                                
+                                                                                                                      Find us on the web at https://github.com/gmr50/shopping-cart !!                                                                                                                       
+------------------------------------------------------------------
+Purchase Date: 05/04/19
+Purchase Time: 01:54 PM
+------------------------------------------------------------------
+ + All-Seasons Salt , $4.99
+ + Robust Golden Unsweetened Oolong Tea , $2.49
+------------------------------------------------------------------
+Subtotal: $7.48
+Tax: $0.45
+Total Price: $7.93
+------------------------------------------------------------------
+Thanks for shopping!
+Come back and get some goodies from Graham soon
+------------------------------------------------------------------
