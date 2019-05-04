@@ -17,6 +17,7 @@ def name_sort(product_list):
 csv_file_path = "products.csv"
 
 
+
 #declare empty list
 products = [] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 

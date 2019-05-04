@@ -4,7 +4,8 @@ import datetime
 def to_usd(input):
 
 
-	result = "${0:.2f}".format(input)
+	result = "${0:,.2f}".format(input)
+
 
 	return result
 
