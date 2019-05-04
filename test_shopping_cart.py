@@ -5,8 +5,11 @@ def test_to_usd():
 	test_passed = False
 	input = 10000
 	result = to_usd(input)
+	print(result)
 
-	if(result[0] == '$'):
+
+
+	if(result[0] == '$' and result[3] == ','):
 		test_passed = True
 
 
