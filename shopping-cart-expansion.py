@@ -3,7 +3,7 @@
 
 import datetime 
 import csv
-
+import os
 
 from shopping_cart_revisited import to_usd, human_friendly_timestamp, find_product, calculate_total_price
 
@@ -14,7 +14,7 @@ def name_sort(product_list):
 
 
 
-csv_file_path = "products.csv"
+csv_file_path = os.getcwd() + "/products.csv"
 
 
 
